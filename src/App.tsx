@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { MagicWordModal } from './components/auth/MagicWordModal';
-import { Heart } from 'lucide-react';
+import { Heart, PartyPopper } from 'lucide-react';
 import { TimeLine } from './components/timeline/TimeLine';
 import { TimelineData } from './data/TimeLineData';
 import { VinylPlayer } from './components/audio/VinylPlayer';
@@ -15,6 +15,20 @@ function App() {
   const [isUnlocked, setIsUnlocked] = useState(false);
   const [currentMessage, setCurrentMessage] = useState<string | null>(null);
   const [clickKey, setClickKey] = useState(0);
+  const [showBirthdayBanner, setShowBirthdayBanner] = useState(true);
+  const BIRTHDAY_MONTH = "11";
+  const BIRTHDAY_DAY = "1";
+
+  const today = new Date();
+  const isBirthdayToday =
+    (today.getMonth() + 1) === parseInt(BIRTHDAY_MONTH) &&
+    today.getDate() === parseInt(BIRTHDAY_DAY);
+
+  const handleUnlock = () => {
+    setShowBirthdayBanner(true); // Se reinicia para que vuelva a salir al entrar
+    setIsUnlocked(true);
+  };
+
   const moonMessages = [
     "Te Extraño",
     "Ay Mi Niña, Mi Niña",
@@ -59,10 +73,10 @@ function App() {
     "Se come todo -_-",
     "Besoosss, MUAK MUAK",
     "Besos pa mis lindas",
-    "Mi Princesa", 
+    "Mi Princesa",
     "Mi Reina",
-    "Mi Niña", 
-    "Mi Estrellita", 
+    "Mi Niña",
+    "Mi Estrellita",
     "Lindaaaa",
     "Te ves Preciosa Hoy",
     "Ven asomatee amoorr",
@@ -94,11 +108,49 @@ function App() {
   return (
     <div className="min-h-screen text-magia-sky-100 font-sans relative overflow-hidden">
       {!isUnlocked && (
-        <MagicWordModal onUnlock={() => setIsUnlocked(true)} />
+        <MagicWordModal onUnlock={handleUnlock} />
       )}
 
       {/* Fondo mágico global */}
       {isUnlocked && <SkyBackground />}
+
+      {/* banner de cumpleaños*/}
+      {isUnlocked && isBirthdayToday && showBirthdayBanner && (
+        <div className="fixed inset-0 pointer-events-none z-50 flex items-center justify-center px-4 bg-magia-dark/60 backdrop-blur-sm">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5, y: -50 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ type: "spring", stiffness: 250, damping: 20 }}
+            className="pointer-events-auto relative p-8 rounded-3xl bg-linear-to-b from-[#1a0b2e] via-[#0d071b] to-[#120a24] border-2 border-amber-300 text-center max-w-md shadow-[0_0_60px_rgba(251,191,36,0.5)] overflow-hidden"
+          >
+            {/* Estrellitas de celebración flotando dentro del modal */}
+            <div className="absolute -top-10 -left-10 w-32 h-32 bg-amber-400/20 rounded-full blur-2xl pointer-events-none" />
+            <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-pink-500/20 rounded-full blur-2xl pointer-events-none" />
+
+            <div className="inline-flex p-4 rounded-full bg-amber-400/20 border border-amber-300/40 text-amber-300 mb-4 animate-bounce">
+              <PartyPopper className="w-10 h-10" />
+            </div>
+
+            <h2 className="text-3xl md:text-4xl font-script text-amber-200 mb-3 drop-shadow">
+              ¡Feliz Cumpleaños, Mi Reina! 🎉
+            </h2>
+
+            <p className="text-sm md:text-base text-magia-sky-200/90 mb-6 leading-relaxed">
+              Hoy el universo está de fiesta porque cumple años la estrellita mas hermosa. Que todos tus sueños se cumplan y que la vida te sonría hoy y siempre, eres maravillosa. ¡Te amo de aqui a las estrellas! 🎂✨💖
+            </p>
+
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setShowBirthdayBanner(false)}
+              className="px-6 py-2.5 rounded-full bg-linear-to-r from-amber-400 to-pink-500 text-magia-dark font-bold shadow-lg shadow-amber-400/30 hover:brightness-110 transition-all cursor-pointer"
+            >
+              ✨¡Celebra Tu Día!✨
+            </motion.button>
+          </motion.div>
+        </div>
+      )}
 
       {/* LUNA */}
       {isUnlocked && (

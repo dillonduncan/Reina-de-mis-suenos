@@ -3,6 +3,14 @@
 @theme {
   --color-magia-dark: #050b14;
   --color-magia-gold: #efb810;
+  --color-magia-amber-300:#fcd34d;
+  --color-magia-yellow-300:#fef09a;
+  --color-magia-pink-400:#f472b6;
+  --color-magia-rose-300:#fda4af;
+  --color-magia-purple-400:#c084fc;
+
+
+  --color-magia-sky-600: #38bdf8;
 
   --color-magia-sky-100: #def7ff;
   --color-magia-sky-200: #bceeff;
