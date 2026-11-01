@@ -351,8 +351,8 @@ export const TimelineData: TimelineItem[] = [
     date: '- 07 de Noviembre 2026',
     title: 'Feliz Cumpleaños Princesa',
     shortDescription: 'Felices 16 meses, mi reina',
-    fullStory: 'Este dia tan especial cumplimos 16 meses, de lucha, de paciencia, de desesperacion, de tristeza, pero de Amor,hoy te pienso, hoy te extraño, hoy te Amo, lo unico que espero es el dia en que puedas estar de nuevo entre mis brazos, con tu amor, con tu vida. Te amo mi reina, hagamos que esto no se acabe, que el amor sea mas fuerte que todo. Te extraño para siempre porque nunca podre olvidarte.',
-    imageUrl: '/image/diita de finca.jpg',
+    fullStory: 'El dia mas especial de este mes, cumple la muñeca, la reina, la princesa, la niña. 19 añitos de ser lo mas precioso. Disfruta de la vida mi princesa.',
+    imageUrl: '/image/mi mujer.jpeg',
   }
 ];
 

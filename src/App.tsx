@@ -21,7 +21,7 @@ function App() {
   const [showCumpleMesBanner, setShowCumpleMesBanner] = useState(true);
   const BIRTHDAY_MONTH = 11;
   const BIRTHDAY_DAY = 7;
-  const CUMPLIMOS_MES=1;
+  const CUMPLIMOS_MES=4;
 
   const today = new Date();
   const isBirthdayToday =
