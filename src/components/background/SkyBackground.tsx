@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const FourPointStar = ({ className = "w-4 h-4 text-amber-100", style = {} }) => (
@@ -24,18 +24,26 @@ const RealisticTulip = ({ colorClass, glowColor, height = "h-20" }: { colorClass
 export const SkyBackground: React.FC = () => {
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
-    const handleMouseMove = (e: React.MouseEvent) => {
-        const { innerWidth, innerHeight } = window;
-        const x = (e.clientX / innerWidth - 0.5) * 30;
-        const y = (e.clientY / innerHeight - 0.5) * 20;
-        setMousePos({ x, y });
-    };
+    useEffect(() => {
+        const handleMouseMove = (e: MouseEvent) => {
+            const { innerWidth, innerHeight } = window;
+            const x = (e.clientX / innerWidth - 0.5) * 30;
+            const y = (e.clientY / innerHeight - 0.5) * 20;
+            setMousePos({ x, y });
+        };
+
+        window.addEventListener('mousemove', handleMouseMove);
+        return () => {
+            window.removeEventListener('mousemove', handleMouseMove);
+        };
+    }, []);
 
     return (
         <div
-            onMouseMove={handleMouseMove}
-            className="fixed inset-0 overflow-hidden pointer-events-none z-0 bg-linear-to-b from-[#05030a] via-[#0d071b] to-[#120a24]"
+            style={{ transform: `translate3d(${mousePos.x}px, ${mousePos.y}px, 0px)` }}
+            className="fixed inset-0 overflow-hidden pointer-events-none z-0 bg-linear-to-b from-[#05030a] via-[#0b0618] to-[#120a24] transition-transform duration-300 ease-out"
         >
+
             {/* ESTRELLAS */}
             <motion.div animate={{ opacity: [0.3, 1, 0.3], scale: [0.8, 1.2, 0.8] }} transition={{ repeat: Infinity, duration: 3 }} className="absolute top-12 left-1/6">
                 <FourPointStar className="w-5 h-5 text-amber-100/90 drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
