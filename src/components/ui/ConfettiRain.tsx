@@ -17,7 +17,6 @@ export const ConfettiRain: React.FC = () => {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
       {particles.map((_, i) => {
-        // Valores pseudoaleatorios deterministas para mantener el render puro.
         const getParticleValue = (seed: number) => {
           const value = Math.sin(seed * 127.1) * 43758.5453;
           return value - Math.floor(value);

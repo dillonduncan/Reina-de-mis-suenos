@@ -10,6 +10,7 @@ import { RelacionCounter } from './components/counter/RelacionCounter';
 import { LogoutButton } from './components/auth/LogoutButton';
 import { SkyBackground } from './components/background/SkyBackgraund';
 import { AnimatePresence, motion } from 'framer-motion';
+import { ConfettiRain } from './components/ui/ConfettiRain';
 
 function App() {
   const [isUnlocked, setIsUnlocked] = useState(false);
@@ -17,7 +18,7 @@ function App() {
   const [clickKey, setClickKey] = useState(0);
   const [showBirthdayBanner, setShowBirthdayBanner] = useState(true);
   const BIRTHDAY_MONTH = "11";
-  const BIRTHDAY_DAY = "1";
+  const BIRTHDAY_DAY = "7";
 
   const today = new Date();
   const isBirthdayToday =
@@ -124,6 +125,7 @@ function App() {
             transition={{ type: "spring", stiffness: 250, damping: 20 }}
             className="pointer-events-auto relative p-8 rounded-3xl bg-linear-to-b from-[#1a0b2e] via-[#0d071b] to-[#120a24] border-2 border-amber-300 text-center max-w-md shadow-[0_0_60px_rgba(251,191,36,0.5)] overflow-hidden"
           >
+            <ConfettiRain /> {/* Lluvia de confeti */}
             {/* Estrellitas de celebración flotando dentro del modal */}
             <div className="absolute -top-10 -left-10 w-32 h-32 bg-amber-400/20 rounded-full blur-2xl pointer-events-none" />
             <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-pink-500/20 rounded-full blur-2xl pointer-events-none" />
@@ -146,7 +148,7 @@ function App() {
               onClick={() => setShowBirthdayBanner(false)}
               className="px-6 py-2.5 rounded-full bg-linear-to-r from-amber-400 to-pink-500 text-magia-dark font-bold shadow-lg shadow-amber-400/30 hover:brightness-110 transition-all cursor-pointer"
             >
-              ✨¡Celebra Tu Día!✨
+              ✨¡Disfruta Tu Día!✨
             </motion.button>
           </motion.div>
         </div>
