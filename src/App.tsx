@@ -8,7 +8,7 @@ import { playList } from './data/SongsData';
 import { Cartita } from './components/letter/Cartita';
 import { RelacionCounter } from './components/counter/RelacionCounter';
 import { LogoutButton } from './components/auth/LogoutButton';
-import { SkyBackground } from './components/background/SkyBackgraund';
+import { SkyBackground } from './components/background/SkyBackground';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ConfettiRain } from './components/ui/ConfettiRain';
 import { HeartsRain } from './components/ui/HeartsRain';
