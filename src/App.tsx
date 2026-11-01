@@ -11,21 +11,27 @@ import { LogoutButton } from './components/auth/LogoutButton';
 import { SkyBackground } from './components/background/SkyBackgraund';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ConfettiRain } from './components/ui/ConfettiRain';
+import { HeartsRain } from './components/ui/HeartsRain';
 
 function App() {
   const [isUnlocked, setIsUnlocked] = useState(false);
   const [currentMessage, setCurrentMessage] = useState<string | null>(null);
   const [clickKey, setClickKey] = useState(0);
   const [showBirthdayBanner, setShowBirthdayBanner] = useState(true);
-  const BIRTHDAY_MONTH = "11";
-  const BIRTHDAY_DAY = "7";
+  const [showCumpleMesBanner, setShowCumpleMesBanner] = useState(true);
+  const BIRTHDAY_MONTH = 11;
+  const BIRTHDAY_DAY = 7;
+  const CUMPLIMOS_MES=1;
 
   const today = new Date();
   const isBirthdayToday =
-    (today.getMonth() + 1) === parseInt(BIRTHDAY_MONTH) &&
-    today.getDate() === parseInt(BIRTHDAY_DAY);
+    (today.getMonth() + 1) === BIRTHDAY_MONTH &&
+    today.getDate() === BIRTHDAY_DAY;
+
+  const isCumpleMes=today.getDate()===CUMPLIMOS_MES;
 
   const handleUnlock = () => {
+    setShowCumpleMesBanner(true); // Se reinicia para que vuelva a salir al entrar
     setShowBirthdayBanner(true); // Se reinicia para que vuelva a salir al entrar
     setIsUnlocked(true);
   };
@@ -153,6 +159,45 @@ function App() {
           </motion.div>
         </div>
       )}
+
+      {/* banner de cumple mes*/}
+      {isUnlocked && isCumpleMes && showCumpleMesBanner && (
+        <div className="fixed inset-0 pointer-events-none z-50 flex items-center justify-center px-4 bg-magia-dark/60 backdrop-blur-sm">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5, y: -50 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ type: "spring", stiffness: 250, damping: 20 }}
+            className="pointer-events-auto relative p-8 rounded-3xl bg-linear-to-b from-[#1a0b2e] via-[#0d071b] to-[#120a24] border-2 border-red-500 text-center max-w-md shadow-[0_0_60px_rgba(244,114,182,0.4)] overflow-hidden"
+          >
+            <HeartsRain /> {/* Lluvia de corazones */}           
+            <div className="absolute -top-10 -left-10 w-32 h-32 bg-sky-400/20 rounded-full blur-2xl pointer-events-none" />
+            <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-red-500/20 rounded-full blur-2xl pointer-events-none" />
+
+            <div className="inline-flex p-4 rounded-full bg-red-400/20 border border-red-400 text-red-500 mb-4 animate-bounce">
+              <Heart className="w-10 h-10" />
+            </div>
+
+            <h2 className="text-2xl md:text-3xl font-script text-amber-200 mb-3 drop-shadow">
+              💖Hoy Damos Un Paso Mas en Nuestra Historia💖
+            </h2>
+
+            <p className="text-sm md:text-base text-magia-sky-200/90 mb-6 leading-relaxed">
+              Otro mes mas de la mano, otro mes tomados del corazon, eres mi mujer, mi amiga, mi compañera, damos otro paso en nuestra historia y solo quiero seguir junto a ti, tomados de la mano hasta siempre. Te Amo, Mi Reina ✨💖
+            </p>
+
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setShowCumpleMesBanner(false)}
+              className="px-6 py-2.5 rounded-full bg-linear-to-r from-sky-400 to-red-500 text-magia-dark font-bold shadow-lg shadow-amber-400/30 hover:brightness-110 transition-all cursor-pointer"
+            >
+              💖¡Disfrutemos Nuestro Día!💖
+            </motion.button>
+          </motion.div>
+        </div>
+      )}
+      
 
       {/* LUNA */}
       {isUnlocked && (
