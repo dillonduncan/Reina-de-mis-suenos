@@ -327,8 +327,8 @@ export const TimelineData: TimelineItem[] = [
     imageUrl: '/image/dia de piscina(2).jpg',
   }, {
     id: '47',
-    date: '- 16 de Julio 2026, 9:25 am',
-    title: 'Ultimo Adios',
+    date: '- 16 de Julio 2026',
+    title: '9:20 Am - Ultimo Adios',
     shortDescription: 'Otra despedida dolorosa',
     fullStory: 'Desde ese dia nada todo cambió, nada ha tenido el mismo sabor, el mismo sentimiento de tener a mi niña entre los brazos, de ver su sonrisa, de oir su risa y oler su cabello con la suave brisa, desde ese dia ya no la veo y en mi corazon se ha borrado la sonrisa, ese ultimo beso, ese ultimo abrazo, los tengo guardados, sin ellos me hago pedazos. Te extraño, mi corazon tiene prisa de sentir los latidos del tuyo. Te Amo',
     imageUrl: '/image/ese jueves 2.jpeg',
