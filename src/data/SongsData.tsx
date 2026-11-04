@@ -94,9 +94,9 @@ export const playList: Song[] = [
     },
     {
         id: '14',
-        title: 'Lo Mejor de Mi Vida',
+        title: 'Lo Mejor Que Hay En Mi Vida',
         artist: 'Andres Cepeda',
-        audioUrl: '/audio/lo-mejor-de-mi-vida.mp3',
+        audioUrl: '/audio/lo-mejor-que-hay-en-mi-vida.mp3',
         coverUrl: ''
     },
     {
