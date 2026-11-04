@@ -91,5 +91,19 @@ export const playList: Song[] = [
         artist: 'Kevin Florez',
         audioUrl: '/audio/asomate-a-la-ventana.mp3',
         coverUrl: ''
+    },
+    {
+        id: '14',
+        title: 'Lo Mejor de Mi Vida',
+        artist: 'Andres Cepeda',
+        audioUrl: '/audio/lo-mejor-de-mi-vida.mp3',
+        coverUrl: ''
+    },
+    {
+        id: '15',
+        title: 'Una y Otra Vez',
+        artist: 'Manuel Medrano',
+        audioUrl: '/audio/una-y-otra-vez.mp3',
+        coverUrl: ''
     }
 ]
