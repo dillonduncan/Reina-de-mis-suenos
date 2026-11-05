@@ -37,6 +37,13 @@ function App() {
   };
 
   const moonMessages = [
+    "Tu Puedes con Todo, Mi Reina",
+    "Yo Creo en Ti, Mi Niña",
+    "Eres MAravillosa",
+    "Vamos con toda, tu puedes",
+    "Vamos moral de perro viejo carajo",
+    "Ya sabias que te ves hermosa hoy, verdad?",
+    "Beshito para que no te rindas",
     "Te Extraño",
     "Ay Mi Niña, Mi Niña",
     "Te Quiero, Mi Princesa",
