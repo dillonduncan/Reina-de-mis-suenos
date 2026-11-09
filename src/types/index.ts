@@ -4,7 +4,8 @@ export interface TimelineItem{
     title: string;
     shortDescription: string;
     fullStory: string;
-    imageUrl: string;    
+    imageUrl?: string;  
+    videoUrl?: string;
 }
 
 export interface Song{

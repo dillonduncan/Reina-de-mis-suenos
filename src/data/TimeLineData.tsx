@@ -350,9 +350,16 @@ export const TimelineData: TimelineItem[] = [
     id: '50',
     date: '- 07 de Noviembre 2026',
     title: 'Feliz Cumpleaños Princesa',
-    shortDescription: 'Felices 16 meses, mi reina',
+    shortDescription: 'Mi reina',
     fullStory: 'El dia mas especial de este mes, cumple la muñeca, la reina, la princesa, la niña. 19 añitos de ser lo mas precioso. Disfruta de la vida mi princesa.',
     imageUrl: '/image/cumpleaños-papis.jpeg',
+  }, {
+    id: '51',
+    date: '- 07 de Noviembre 2026',
+    title: 'MI MUJER, MIA ¿OK?',
+    shortDescription: '',
+    fullStory: 'Mi novia se me esta poniendo vieeja y le esta costando un poco camiinaarr. Tres meses sin venir y ella en bandeja. Le sirve otro cafe para su amoorr',
+    videoUrl: '/video/mi mujer.mp4',
   }
 ];
 

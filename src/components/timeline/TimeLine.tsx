@@ -43,9 +43,8 @@ export const TimeLine: React.FC<TimelineProps> = ({ items }) => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, margin: '-50px' }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className={`relative flex flex-col md:flex-row items-center w-full ${
-                                    isEven ? "md:flex-row-reverse" : ""
-                                }`}
+                                className={`relative flex flex-col md:flex-row items-center w-full ${isEven ? "md:flex-row-reverse" : ""
+                                    }`}
                             >
                                 {/* tarjeta interactiva (ocupa la mitad en escritorio) */}
                                 <div className="ml-8 md:ml-0 md:w-1/2 md:px-8 w-full">
@@ -107,7 +106,7 @@ export const TimeLine: React.FC<TimelineProps> = ({ items }) => {
                         >
                             <div className="absolute top-3 left-3 text-magia-gold text-lg select-none">
                                 🌸✨
-                            </div>                            
+                            </div>
                             <div className="absolute bottom-3 left-4 text-magia-gold text-base select-none">
                                 ✨🌸
                             </div>
@@ -122,19 +121,40 @@ export const TimeLine: React.FC<TimelineProps> = ({ items }) => {
                                 <X className="w-5 h-5" />
                             </button>
 
-                            {selectedItem.imageUrl && (
+                            {/* Contenedor Multimedia (Foto o Video Automático con forma de Corazón) */}
+                            {(selectedItem.videoUrl || selectedItem.imageUrl) && (
                                 <div className="relative my-2 shrink-0 flex items-center justify-center">
+                                    {/* Resplandor romántico detrás */}
                                     <div className="absolute w-48 h-48 md:w-56 md:h-56 bg-magia-pink-500/30 rounded-full blur-xl animate-pulse" />
+
+                                    {/* Marco con forma de corazón */}
                                     <div className="relative w-48 h-44 md:w-56 md:h-52 overflow-hidden">
-                                        <img
-                                            src={selectedItem.imageUrl}
-                                            alt={selectedItem.title}
-                                            className="w-full h-full object-cover"
-                                            style={{
-                                                clipPath: 'polygon(50% 15%, 65% 0%, 85% 0%, 100% 20%, 100% 45%, 50% 95%, 0% 45%, 0% 20%, 15% 0%, 35% 0%)',
-                                                borderRadius: '12px'
-                                            }}
-                                        />
+                                        {selectedItem.videoUrl ? (
+                                            /* Video en bucle, automático, silencioso y con forma de corazón */
+                                            <video
+                                                src={selectedItem.videoUrl}
+                                                autoPlay
+                                                muted
+                                                loop
+                                                playsInline
+                                                className="w-full h-full object-cover"
+                                                style={{
+                                                    clipPath: 'polygon(50% 15%, 65% 0%, 85% 0%, 100% 20%, 100% 45%, 50% 95%, 0% 45%, 0% 20%, 15% 0%, 35% 0%)',
+                                                    borderRadius: '12px'
+                                                }}
+                                            />
+                                        ) : (
+                                            /* Imagen estática con el mismo marco de corazón */
+                                            <img
+                                                src={selectedItem.imageUrl}
+                                                alt={selectedItem.title}
+                                                className="w-full h-full object-cover"
+                                                style={{
+                                                    clipPath: 'polygon(50% 15%, 65% 0%, 85% 0%, 100% 20%, 100% 45%, 50% 95%, 0% 45%, 0% 20%, 15% 0%, 35% 0%)',
+                                                    borderRadius: '12px'
+                                                }}
+                                            />
+                                        )}
                                     </div>
                                 </div>
                             )}
