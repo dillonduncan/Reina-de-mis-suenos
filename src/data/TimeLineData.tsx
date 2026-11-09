@@ -352,7 +352,7 @@ export const TimelineData: TimelineItem[] = [
     title: 'Feliz Cumpleaños Princesa',
     shortDescription: 'Felices 16 meses, mi reina',
     fullStory: 'El dia mas especial de este mes, cumple la muñeca, la reina, la princesa, la niña. 19 añitos de ser lo mas precioso. Disfruta de la vida mi princesa.',
-    imageUrl: '/image/mi mujer.jpeg',
+    imageUrl: '/image/cumpleaños-papis.jpeg',
   }
 ];
 
