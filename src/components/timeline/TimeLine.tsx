@@ -121,16 +121,16 @@ export const TimeLine: React.FC<TimelineProps> = ({ items }) => {
                                 <X className="w-5 h-5" />
                             </button>
 
-                            {/* Contenedor Multimedia (Foto o Video Automático con forma de Corazón) */}
+                            {/* Contenedor Multimedia */}
                             {(selectedItem.videoUrl || selectedItem.imageUrl) && (
                                 <div className="relative my-2 shrink-0 flex items-center justify-center">
-                                    {/* Resplandor romántico detrás */}
+                                    {/* Resplandor atrás */}
                                     <div className="absolute w-48 h-48 md:w-56 md:h-56 bg-magia-pink-500/30 rounded-full blur-xl animate-pulse" />
 
                                     {/* Marco con forma de corazón */}
                                     <div className="relative w-48 h-44 md:w-56 md:h-52 overflow-hidden">
                                         {selectedItem.videoUrl ? (
-                                            /* Video en bucle, automático, silencioso y con forma de corazón */
+                                            /* Video */
                                             <video
                                                 src={selectedItem.videoUrl}
                                                 autoPlay
@@ -144,7 +144,7 @@ export const TimeLine: React.FC<TimelineProps> = ({ items }) => {
                                                 }}
                                             />
                                         ) : (
-                                            /* Imagen estática con el mismo marco de corazón */
+                                            /* Imagen estática*/
                                             <img
                                                 src={selectedItem.imageUrl}
                                                 alt={selectedItem.title}
