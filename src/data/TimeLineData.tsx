@@ -356,8 +356,8 @@ export const TimelineData: TimelineItem[] = [
   }, {
     id: '51',
     date: '- 07 de Noviembre 2026',
-    title: 'MI MUJER, MIA ¿OK?',
-    shortDescription: '',
+    title: 'Una mujer',
+    shortDescription: 'No es mia ¿ok?',
     fullStory: 'Mi novia se me esta poniendo vieeja y le esta costando un poco camiinaarr. Tres meses sin venir y ella en bandeja. Le sirve otro cafe para su amoorr',
     videoUrl: '/video/mi mujer.mp4',
   }
