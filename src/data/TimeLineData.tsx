@@ -360,6 +360,13 @@ export const TimelineData: TimelineItem[] = [
     shortDescription: 'No es mia ¿ok?',
     fullStory: 'Mi novia se me esta poniendo vieeja y le esta costando un poco camiinaarr. Tres meses sin venir y ella en bandeja. Le sirve otro cafe para su amoorr',
     videoUrl: '/video/mi mujer.mp4',
+  }, {
+    id: '52',
+    date: '- 12 de Noviembre 2026',
+    title: 'Una Mujer Fandanguera',
+    shortDescription: 'Mira, una mujer culta',
+    fullStory: '',
+    imageUrl: '/image/fandanguera.png',
   }
 ];
 
